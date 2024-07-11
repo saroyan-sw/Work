@@ -31,7 +31,7 @@ class LinkedList():
         temp = self.root
         index = 0
         while temp.value != value:
-            if temp.next == None:
+            if temp.next is None:
                 print('Element is not on List')
                 return -1
             temp = temp.next
@@ -49,7 +49,7 @@ class LinkedList():
         temp = self.root
 
         for i in range(index):
-            if temp.next == None:
+            if temp.next is None:
                 print('Index out of range')
                 return
             temp = temp.next
@@ -66,11 +66,11 @@ class LinkedList():
         temp = self.root
         elements = ''
 
-        while temp.next != None:
+        while temp.next is not None:
              elements += str(temp.value) + ' '
              temp = temp.next
         
-        return elements
+        return elements + str(temp.value)
 
     
     def insert(self, index:int, value:int):
@@ -87,14 +87,14 @@ class LinkedList():
         temp = self.root
 
         for _ in range(index - 1):
-            if temp.next.next != None:
+            if temp.next.next is not None:
                 temp = temp.next
             else:
                 print('Index out of range')
                 return
                 
         
-        if temp.next != None:
+        if temp.next is not None:
             upcoming = temp.next
             temp.next = MyNode(value, upcoming)
         else:
@@ -114,7 +114,7 @@ class LinkedList():
         
         temp = self.root
         for _ in range(index - 1):
-            if temp.next.next != None:
+            if temp.next.next is not None:
                 temp = temp.next
             else:
                 temp = None
